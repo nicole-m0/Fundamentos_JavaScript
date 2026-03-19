@@ -80,7 +80,7 @@ console.log("---------------------------");
 var personagens = [
     {nome: "Guerreiro Zendaya", nivel: 5, vidas: 100},
     {nome:"Mago de Oz", nivel: 3, vidas: 70},
-    {nome: "Arqueiro", nivel: 4, vidas: 50}
+    {nome: "Arqueiro Azul", nivel: 4, vidas: 50}
 ]
 
 console.log("----------Personagens----------");
