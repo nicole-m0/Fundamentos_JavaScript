@@ -71,10 +71,10 @@ usuario = {
     premium: false
 }
 
-if (usuario.premium && idade >= 18){
-    console.log("Parabéns "+usuario.nome+"! Você tem acesso total a nossa plataforma!");
-}if (usuario.premium && idade < 18) {
-    console.log(usuario.nome+" você tem acesso limitado a nossa plataforma pois ainda é de menor.");
-}if(!usuario.premium){
-    console.log("Acesso negado!")
+if (usuario.premium) {
+    console.log("Acesso total")
+} else if (usuario.idade >= 18) {
+    console.log("Acesso limitado")
+} else {
+    console.log("Acesso negado")
 }
