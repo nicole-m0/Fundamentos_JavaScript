@@ -75,9 +75,9 @@ if(temperatura >= 38 || doente){
 // desafio 08
 var usuario = {
     nome: "carlos",
-    idade: 19,
-    premium: true,
-    ativo: true,
+    idade: 15,
+    premium: false,
+    ativo: false,
 }  
 
 if (usuario.ativo && usuario.premium){
