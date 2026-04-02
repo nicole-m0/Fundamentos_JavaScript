@@ -46,12 +46,81 @@ while(i < 10){
 console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
 // desafio 05
 // Crie um programa que soma todos os números de 1 até 100 e mostra o resultado final.
-
 var soma = 0;
-
 for(var n = 1; n <= 100; n++){
-    
     soma += n;
-    
 }
 console.log(soma);
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// desafio 06
+// Peça um número (pode colocar fixo por enquanto) e mostre a tabuada dele de 1 até 10.
+
+var n2 = 1;
+for(var n = 1; n <= 10; n++){
+    var multiplicacao = n * n2;
+    console.log(n+" x "+n2+" = "+multiplicacao);
+}
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// desafio 07
+// Mostre números de 1 até 30, mas:
+// Se for múltiplo de 3 → escreva "Fizz"
+// Se for múltiplo de 5 → escreva "Buzz"
+// Se for múltiplo de 3 e 5 → "FizzBuzz"
+
+for(var i = 1; i <= 30; i++){
+    if(i % 3 === 0 && i % 5 === 0){
+        console.log("FizzBuzz");
+    } else if(i % 3 === 0){
+        console.log("Fizz");
+    } else if(i % 5 === 0){
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// desafio 08
+// Você começa com vida = 10. A cada rodada perde 1 de vida. Quando a vida chegar a 0, o loop para automaticamente.
+// 👉 Se a vida chegar a 5, mostre: metade da vida!
+
+for(var v = 10; v >= 0; v--){
+    if(v == 5){
+        console.log("⚠️Metade da vida!");
+        continue
+    }
+    if(v == 0){
+        console.log("💀Acabou suas vidas!")
+        break
+    }
+    console.log("❤️Vidas: "+v);
+}
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// desafio 09
+// Mostre números de 1 até 20: Ignore (continue) números pares...Mostre só os ímpares
+for(var i = 1; i <= 20; i++){
+    if(i % 2 === 0){
+        continue;
+    }
+    console.log(i);
+}
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// desafio 10
+// Vai de 1 até 50
+// Para se encontrar o número 37 (break)
+// Ignora múltiplos de 4 (continue)
+// Mostra os outros números
+
+for(var i = 1; i <= 50; i++){
+    if(i === 37){
+        break;
+    }
+    if(i % 4 == 0){
+        continue;
+    }
+    console.log(i);
+}
