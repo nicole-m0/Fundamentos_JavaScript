@@ -124,3 +124,35 @@ for(var i = 1; i <= 50; i++){
     }
     console.log(i);
 }
+
+console.log("-=-=-=-=-=--=-=--=-=-=-=-=-=-=-=");
+// 💣 DESAFIO: Sistema de batalha simples
+// Crie um código onde:
+// Você começa com: vida = 10
+// Loop roda enquanto vida > 0
+// A cada rodada: Mostra a vida atual
+// Se vida for múltiplo de 3 → mostrar: "🔥 ataque crítico!"
+// Se vida for 5 → mostrar: "⚠️ cuidado!"
+// Se vida for 2 → pular essa rodada (continue): 
+// Se vida chegar a 0 → mostrar: "💀 derrotado!" e parar
+// 👉 A cada rodada: vida--
+
+for( var vida = 10; vida >= 0; vida--){
+    if(vida == 2){
+        console.log("Pular essa rodada...");
+        continue;
+    }
+    else if(vida === 0){
+        console.log("❤️Vida Atual "+vida+" --- 💀 derrotado!");
+        break;
+    }
+    else if(vida % 3 === 0){
+        console.log("❤️Vida Atual "+vida+" --- 🔥 ataque crítico!");
+    }
+    else if(vida === 5){
+        console.log("❤️Vida Atual "+vida+" --- ⚠️ cuidado!");
+    }
+    else{
+        console.log("❤️Vida Atual "+vida);
+    }
+}
