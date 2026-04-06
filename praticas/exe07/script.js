@@ -175,6 +175,7 @@ function somarParesImpares(n){
     var i = 1;
     var impares = 0;
     var pares = 0;
+    
      while(i <= n){
         soma += i;
 
@@ -193,3 +194,22 @@ function somarParesImpares(n){
 }
 
 somarParesImpares(10);
+
+console.log("-=-=-=-=-=-=Desafio 11-=-=-=-=-=-=-=");
+// Modifica sua função pra também mostrar:
+// 👉 quantos números são múltiplos de 3
+// Exemplo esperado: Múltiplos de 3: 3
+
+function somarMultuplos(n){
+    var contador = 0;
+    var i = 1;
+
+    while(i <= n){
+        if(i % 3 === 0){
+            contador++;
+        }
+        i++
+    }
+    console.log("A quantidade de números múltiplos de 3 é: "+contador);
+}
+somarMultuplos(10);
