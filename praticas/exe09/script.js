@@ -7,17 +7,21 @@ console.log("==============Desafio 01==============");
 // Use parseInt() e parseFloat()
 // Retorne um objeto
 
-function cadastro(){
-    var pessoaCadastro = "nome: Ana, idade: 25, altura: 1.68 ";
-    console.log(pessoaCadastro.split(", "));
+function cadastro(dados){
+    var partes = dados.split(",");
 
-    var pcTrim = pessoaCadastro.trim();
-    console.log(pcTrim);
+    var nome = partes[0].trim();
+    var idade = parseInt(partes[1]);
+    var altura = parseFloat(partes[2]);
 
-    console.log(parseFloat("25"));
-    console.log(parseInt(1.68));    
+    return {
+        nome: nome,
+        idade: idade,
+        altura: altura
+    };
 }
-cadastro();
+
+console.log(cadastro(" Ana , 25 , 1.68 "));
 
 console.log("==============Desafio 02==============");
 // 🥈 Desafio 2 — Analisador de texto
@@ -48,23 +52,24 @@ console.log("==============Desafio 03==============");
 // Use split()
 // Use slice() para capitalizar
 
-function formatarNome(){
-    var nome = "   jOÃO da silva   ";
+function formatarNome(nome){
+    var nomeLimpo = nome.trim().toLowerCase();
 
-    var nomeTrim = nome.trim();
-    console.log(nomeTrim);
+    var partes = nomeLimpo.split();
+    var nomeFormatado = "";
 
-    console.log(nome.toLowerCase());
-    console.log(nome.split(", "));
-    
-    var nomeNovo = nome.replace("jOÃO da silva", "João da Silva");
-    console.log(nomeNovo);
+    for(var i = 0; i < partes.length; i++){
+        var palavra = partes[i];
+        var primeiraLetra = palavra[0].toUpperCase();
+        var resto = palavra.slice(1);
 
-    var primeiroNome = nomeNovo.slice(0, 3);
-    console.log(primeiroNome);
+        nomeFormatado += primeiraLetra + resto + " ";
+    }
+
+    return nomeFormatado.trim();
+
 }
-
-formatarNome();
+console.log(formatarNome("   jOÃO da silva   "));
 
 console.log("==============Desafio 04==============");
 // 🏅 Desafio 4 — Substituir palavras
@@ -74,8 +79,72 @@ console.log("==============Desafio 04==============");
 function trocarPalavra(){
     var frase = "Eu gosto de maçã, maçã é muito bom";
 
-    var frutaTrocada = frase.replace("maçã", "banana");
+    var frutaTrocada = frase.replaceAll("maçã", "banana");
     console.log(frutaTrocada);
 }
 
 trocarPalavra();
+
+console.log("==============Desafio 05==============");
+// 🎯 Desafio 5 — Sistema de produtos
+// Crie uma função que receba um array:
+// [
+// "Notebook-2500.50",
+//   "Celular-1200.00",
+//   "Fone-100.99"
+// ]
+// Regras:
+// Use split() para separar nome e preço
+// Use parseFloat()
+// Crie objetos:
+// { nome: "Notebook", preco: 2500.50 }
+// Retorne:
+// Lista de objetos
+// Soma total dos preços
+
+function produtos(lista){
+    var resultado = [];
+    var soma = 0;
+
+    for(i = 0; i < lista.length; i++){
+        var partes = lista[i].split("-");
+        var nome = partes[0];
+        var preco = parseFloat(partes[1]);
+
+        resultado.push({
+            nome: nome,
+            preco: preco
+        });
+        soma += preco;
+    }
+    return {
+        Produtos: resultado,
+        Soma: soma
+    };
+}
+
+console.log(produtos([
+ "Notebook-2500.50",
+   "Celular-1200.00",
+   "Fone-100.99"
+]));
+
+console.log("==============Desafio 06==============");
+// 🧩 Desafio 6 — Validador de login
+// Crie uma função que receba:"   ADMIN@GMAIL.COM "
+// Regras: Limpar espaços(splt), Transformar em minúsculo(toLowercase), Verificar se contém "@"
+// Retornar:
+// {
+//   email: "admin@gmail.com",
+//   valido: true
+// }
+
+function validarLogin(login){
+    var email = login.trim().toLowerCase();
+    var valido = email.indexOf("@") !== -1;
+    return {
+        email: email,
+        valido: valido
+    };
+}
+console.log(validarLogin("   ADMIN@GMAIL.COM "));
