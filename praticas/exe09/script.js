@@ -106,7 +106,7 @@ function produtos(lista){
     var resultado = [];
     var soma = 0;
 
-    for(i = 0; i < lista.length; i++){
+    for(var i = 0; i < lista.length; i++){
         var partes = lista[i].split("-");
         var nome = partes[0];
         var preco = parseFloat(partes[1]);
@@ -148,3 +148,77 @@ function validarLogin(login){
     };
 }
 console.log(validarLogin("   ADMIN@GMAIL.COM "));
+
+console.log("==============Desafio 06==============");
+// 🎯 MINI DESAFIO PRA FIXAR (esse aqui é ouro)
+// Cria uma função que receba: "banana, maçã, uva"
+// E retorne: ["BANANA", "MAÇÃ", "UVA"]
+// Regras: usar split, usar trim,usar toUpperCase, usar loop.
+
+function formatarFrutas(texto){
+    var lista = texto.split(",");
+    var resultado = [];
+
+    for(var i = 0; i < lista.length; i++){
+        var fruta = lista[i];
+
+        fruta = fruta.trim();
+        fruta = fruta.toUpperCase();
+
+        resultado.push(fruta);
+    }
+
+    return resultado;
+}
+
+console.log(formatarFrutas("banana, maçã, uva"));
+
+console.log("==============Desafio 07==============");
+// Entrada: "  joão, MARIA, pedro  "
+// Saída: ["João", "Maria", "Pedro"]
+// Regras: split, trim, toLowerCase, slice (pra capitalizar), loop
+
+function formatarFrutas(texto){
+    var lista = texto.split(",");
+    var resultado = [];
+
+    for(var i = 0; i < lista.length; i++){
+        var fruta = lista[i];
+        fruta = fruta.trim().toLowerCase();
+        var primeiraLetra = fruta[0].toUpperCase();
+        var resto = fruta.slice(1);
+        var nomeLimpo = primeiraLetra + resto;
+
+        resultado.push(nomeLimpo);
+    }
+
+    return resultado;
+}
+
+console.log(formatarFrutas("  joão, MARIA, pedro  "));
+
+console.log("==============Desafio 07==============");
+// Entrada: "joão-20, maria-25, pedro-18"
+// Saída: [ { nome: "João", idade: 20 }, { nome: "Maria", idade: 25 }, { nome: "Pedro", idade: 18 }]
+// Regras: split(","), split("-"), trim, parseInt
+
+function nomeIdade(texto){
+    var lista = texto.split(", ");
+    var resultado = [];
+
+    for(var i = 0; i < lista.length; i++){
+        var partes = lista[i].split("-");
+        var nome = partes[0];
+        var idade = partes[1];
+
+        var nomeLimpo = nome.trim().toLowerCase();
+        var nomeFinal = nomeLimpo[0].toUpperCase() + nomeLimpo.slice(1);
+
+        resultado.push({
+            nome: nomeFinal, idade: idade
+        })
+    }
+    return resultado;
+}
+
+console.log(nomeIdade("joão-20, maria-25, pedro-18"))
